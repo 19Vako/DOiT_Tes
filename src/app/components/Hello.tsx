@@ -14,14 +14,12 @@ export const Hello = () => (
     }}
   >
     <Typography variant="h2">Ласкаво просимо!</Typography>
-    <Typography variant="h5" color="text.secondary">
-      Сучасний застосунок на React + MUI + MVVM
-    </Typography>
+  
     <Stack direction="row" spacing={2} mt={4}>
       <Button variant="contained" component={Link} href="/posts">
         Переглянути пости
       </Button>
-      <Button variant="outlined" component={Link} href="/posts/create">
+      <Button variant="outlined" component={Link} href="/create">
         Додати пост
       </Button>
     </Stack>

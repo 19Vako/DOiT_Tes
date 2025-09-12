@@ -24,7 +24,7 @@ export default function PostsPage() {
   const filteredPosts = posts.filter((post) => post.title.toLowerCase().includes(query.toLowerCase()));
 
   const speedDialActions = [
-    { icon: <AddIcon />, name: "Створити пост", action: () => router.push("/posts/create") },
+    { icon: <AddIcon />, name: "Створити пост", action: () => router.push("/create") },
   ];
 
   return (

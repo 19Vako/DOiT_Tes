@@ -40,7 +40,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
           <ListItem component={NextLink} href="/posts">
             <ListItemText primary="Усі пости" />
           </ListItem>
-          <ListItem component={NextLink} href="/posts/create">
+          <ListItem component={NextLink} href="/create">
             <ListItemText primary="Створити пост" />
           </ListItem>
         </List>
