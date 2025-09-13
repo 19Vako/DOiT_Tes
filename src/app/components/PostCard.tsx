@@ -27,7 +27,7 @@ export const PostCard = ({ post }: PostCardProps) => {
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          {post.body.length > 100 ? post.body.slice(0, 100) + "..." : post.body}
+          {post.body.length > 80 ? post.body.slice(0, 80) + "..." : post.body}
         </Typography>
       </CardContent>
       <CardActions>

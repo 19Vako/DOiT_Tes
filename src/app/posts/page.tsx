@@ -28,14 +28,16 @@ export default function PostsPage() {
   ];
 
   return (
-    <Box sx={{ position: "relative" }}>
+    <Box sx={{ }}>
       <TextField
         fullWidth
         variant="outlined"
         placeholder="Пошук за заголовком"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        sx={{ mb: 3 }}
+        sx={{ 
+          mb: 3,
+        }}
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
@@ -45,15 +47,15 @@ export default function PostsPage() {
         }}
       />
 
-      <Grid container spacing={2}>
+      <Grid container sx={{display:"flex", justifyContent:"center"}} spacing={2}>
         {loading
           ? Array.from({ length: 6 }).map((_, i) => (
-              <Grid item xs={12} sm={6} md={4} key={`skeleton-${i}`}>
+              <Grid item xs={10} sm={6} md={4} key={`skeleton-${i}`}>
                 <Skeleton variant="rectangular" height={200} />
               </Grid>
             ))
           : filteredPosts.map((post) => (
-              <Grid item xs={12} sm={6} md={4} key={post.id}>
+              <Grid item xs={10} sm={6} md={4} key={post.id}>
                 <PostCard post={post} />
               </Grid>
             ))}
