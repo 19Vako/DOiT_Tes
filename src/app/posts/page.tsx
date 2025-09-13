@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Box, TextField, InputAdornment, Skeleton, Grid, SpeedDial, SpeedDialAction } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
+import { Box, Skeleton, Grid, SpeedDial, SpeedDialAction } from "@mui/material";
+import InputField from "../components/InputField";
 import AddIcon from "@mui/icons-material/Add";
 import PostIcon from "@mui/icons-material/Article";
 import { useDispatch, useSelector } from "react-redux";
@@ -27,39 +27,28 @@ export default function PostsPage() {
     { icon: <AddIcon />, name: "Створити пост", action: () => router.push("/create") },
   ];
 
+
   return (
-    <Box sx={{ }}>
-      <TextField
-        fullWidth
-        variant="outlined"
-        placeholder="Пошук за заголовком"
+    <Box sx={{display:"flex", flexDirection:"column", alignItems:"center"}}>
+      <InputField
+        label="Пошук постів"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        sx={{ 
-          mb: 3,
-        }}
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <SearchIcon />
-            </InputAdornment>
-          ),
-        }}
       />
-
       <Grid container sx={{display:"flex", justifyContent:"center"}} spacing={2}>
         {loading
           ? Array.from({ length: 6 }).map((_, i) => (
-              <Grid item xs={10} sm={6} md={4} key={`skeleton-${i}`}>
-                <Skeleton variant="rectangular" height={200} />
-              </Grid>
-            ))
+            <Grid item xs={12} sm={6} md={4} lg={3} key={`skeleton-${i}`}>
+              <Skeleton variant="rectangular" height={200} />
+            </Grid>
+        ))
           : filteredPosts.map((post) => (
-              <Grid item xs={10} sm={6} md={4} key={post.id}>
-                <PostCard post={post} />
-              </Grid>
-            ))}
+            <Grid item xs={12} sm={6} md={4} lg={3} key={post.id}>
+              <PostCard post={post} />
+            </Grid>
+        ))}
       </Grid>
+
 
       <SpeedDial
         ariaLabel="SpeedDial"

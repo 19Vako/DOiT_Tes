@@ -9,16 +9,10 @@ import {
   CardContent,
   CardActions,
   Avatar,
-  IconButton,
   Typography,
   Button,
   CircularProgress,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  Badge,
 } from "@mui/material";
-import CommentIcon from "@mui/icons-material/Comment";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/store/store";
@@ -59,7 +53,7 @@ export default function PostDetailPage() {
 
   return (
     <Box sx={{ p: 3 }}>
-      <Card>
+      <Card >
         <CardHeader
           avatar={<Avatar>{post.title[0]}</Avatar>}
           title={post.title}

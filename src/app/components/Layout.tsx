@@ -12,8 +12,6 @@ import NextLink from "./NextLink";
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const { mode, toggleColorMode } = useColorMode();
-
-
   const toggleDrawer = () => setDrawerOpen(!drawerOpen);
 
   return (
