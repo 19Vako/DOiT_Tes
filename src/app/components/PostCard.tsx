@@ -14,7 +14,7 @@ export const PostCard = ({ post }: PostCardProps) => {
   const dispatch = useDispatch<AppDispatch>();
 
   return (
-    <Card sx={{ height: "100%", width:"20vw", display: "flex", flexDirection: "column" }}>
+    <Card sx={{ height: "100%", width:"430px", display: "flex", flexDirection: "column" }}>
       <CardHeader
         avatar={<Avatar>{post.title[0]}</Avatar>}
         title={post.title}
